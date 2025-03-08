@@ -10,7 +10,7 @@
 ✅ Fully responsive UI  
 
 ## 🛠️ Tech Stack  
-- **Frontend**: React, Tailwind CSS  
+- **Frontend**: React, Bootstrap 
 - **Backend**: Node.js, Express.js  
 - **Database**: MongoDB (Atlas)  
 - **Hosting**: Render  
@@ -19,8 +19,8 @@
 
 ### 1️⃣ Clone the repository  
 ```bash
-git clone https://github.com/your-username/BookCRUD.git
-cd BookCRUD
+git clone https://github.com/your-username/bookcrud.git
+cd bookcrud
 ```
 
 ### 2️⃣ Backend Setup  
@@ -48,10 +48,7 @@ http://localhost:3000
 ```
 
 ## 🌎 Live Demo  
-🔗 **BookCRUD App**: [Click Here](https://mybooks-k33o.onrender.com/)  
-
-## 📸 Screenshots  
-![BookCRUD Screenshot](https://your-screenshot-url.com)  
+🔗 **BookCRUD App**: [Click Here](https://mybooks-k33o.onrender.com/)   
 
 ## 📌 Contributing  
 1. Fork the repo  
