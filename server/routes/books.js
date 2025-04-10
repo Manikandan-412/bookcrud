@@ -33,7 +33,8 @@ router.get('/find/:id', async (req, res) => {
         }
         res.json(book);
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        console.log("error: "+err);
+        
     }
 });
 
@@ -56,6 +57,11 @@ router.put('/update/:id', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+
+
+
+
+
 
 // Delete a Book
 router.delete('/delete/:id', async (req, res) => {

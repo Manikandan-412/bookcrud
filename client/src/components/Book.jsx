@@ -6,13 +6,10 @@ const BookCrudComponent = () => {
     const [formData, setFormData] = useState({ name: "", author: "", year: "" });
     const [editingBook, setEditingBook] = useState(null);
 
-    useEffect(() => {
-        fetchBooks();
-    }, []);
 
     const fetchBooks = async () => {
         try {
-            const response = await axios.get("https://bookcrud-72re.onrender.com/book/view");
+            const response = await axios.get("http://localhost:3001/book/view");
             setBooks(response.data);
         } catch (error) {
             console.error("Error fetching books:", error);
@@ -23,10 +20,10 @@ const BookCrudComponent = () => {
         e.preventDefault();
         try {
             if (editingBook) {
-                await axios.put(`https://bookcrud-72re.onrender.com/book/update/${editingBook._id}`, formData);
+                await axios.put(`http://localhost:3001/book/update/${editingBook._id}`, formData);
                 setEditingBook(null);
             } else {
-                await axios.post("https://bookcrud-72re.onrender.com/book/upload", formData);
+                await axios.post("http://localhost:3001/book/upload", formData);
             }
             setFormData({ name: "", author: "", year: "" });
             fetchBooks();
@@ -43,8 +40,8 @@ const BookCrudComponent = () => {
     const handleDelete = async (id) => {
         try {
             const isDelete = window.confirm("are you want to delete?");
-            if (isDelete == true) {
-                await axios.delete(`https://bookcrud-72re.onrender.com/book/delete/${id}`);
+            if (isDelete === true) {
+                await axios.delete(`http://localhost:3001/book/delete/${id}`);
                 fetchBooks();
             }
 
@@ -52,6 +49,9 @@ const BookCrudComponent = () => {
             console.error("Error deleting book:", error);
         }
     };
+    useEffect(() => {
+        fetchBooks();
+    }, []);
 
     return (
         <div className="container mt-5">
