@@ -5,7 +5,7 @@ const Books = require("../models/book");
 // Upload a book
 router.post('/upload', async (req, res) => {
     try {
-        const { name, author, year } = req.body;
+        const { name, author, year } = req.body;    
         const newBook = new Books({ name, author, year });
         await newBook.save();
         res.json({ success: true, message: "Book uploaded successfully!" });
